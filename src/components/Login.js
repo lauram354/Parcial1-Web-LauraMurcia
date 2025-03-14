@@ -34,9 +34,14 @@ function Login() {
       });
   
       if (isValidUser && validationStates.passwordState) {
-        alert(JSON.stringify(formValues));
-        navigate("/robots");
-        
+        JSON.stringify(formValues);
+        const validLogin = formValues.user === "admin" && formValues.password === "pass"
+        if (validLogin){
+            navigate("/robots");
+            
+        }else{
+            alert("Datos invalidos")
+        }
       }
     };
   
