@@ -1,0 +1,18 @@
+{
+    "error":"Authentication error. Check your credentials",
+    "header": "Adopt your robot with Robot Lovers!",
+    "login": "Login",
+    "user": "Username",
+    "user-error": "Usuarname is invalid.",
+    "password":"Password",
+    "password-error":"Password is not valid.",
+    "submit": "Submit",
+    "cancel": "Cancel",
+    "name": "Name",
+    "model": "Model",
+    "company": "Manufacturer",
+    "year": "Fabrication year",
+    "capacity": "Processing capacity",
+    "humor":"Humor"
+
+}

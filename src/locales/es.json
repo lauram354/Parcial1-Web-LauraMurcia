@@ -1,0 +1,19 @@
+{
+    "error":"Error de autenticación. Revise sus credenciales",
+    "header": "Adopta tu robot con Robot Lovers!",
+    "login": "Inicio de sesión",
+    "user": "Nombre de usuario",
+    "user-error": "Usuario invalido.",
+    "password":"Contraseña",
+    "password-error":"Contraseña invalida.",
+    "submit": "Ingresar",
+    "cancel": "Cancelar",
+    "name": "Nombre",
+    "model": "Modelo",
+    "company": "Empresa Fabricante",
+    "year": "Año fabricación",
+    "capacity": "Capacidad de Procesamiento",
+    "humor":"Humor"
+
+
+}

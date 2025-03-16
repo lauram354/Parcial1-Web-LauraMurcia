@@ -6,12 +6,36 @@ import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 import reportWebVitals from './reportWebVitals';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Container from "react-bootstrap/Container";
+import {IntlProvider} from 'react-intl';
+import localeEnMessages from './locales/en';
+import localeEsMessages from './locales/es';
+
+
+
+let initLocale = "es-Es";
+if (navigator.language === "en"){
+    initLocale = "en"
+}
+
+function loadMessages(initLocale){
+  switch (initLocale){
+      case "en":
+          return localeEnMessages;
+      case "es-ES":
+          return localeEsMessages;
+      default:
+          return localeEsMessages;
+  }
+
+}
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <Container className="mt-3">
-    <App/>
- </Container>
+  <IntlProvider locale={initLocale} messages={loadMessages(initLocale)}>
+    <Container className="mt-3">
+      <App/>
+    </Container>       
+  </IntlProvider>, document.getElementById("root")
 );
 
 // If you want your app to work offline and load faster, you can change

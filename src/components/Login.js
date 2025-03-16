@@ -5,6 +5,7 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Footer from './footer';
 import Col from 'react-bootstrap/esm/Col';
+import { FormattedMessage } from 'react-intl';
 
 function Login() {
     const [formValues, setFormValues] = useState({user:"", password:""})
@@ -61,7 +62,7 @@ function Login() {
             
         }else{
           setValidationStates({ userState: false, passwordState: false });
-          setError("Error de autenticación. Revise sus credenciales")
+          setError(<FormattedMessage id="error"/>)
         }
       }
     };
@@ -76,17 +77,17 @@ function Login() {
     return (
       <div className="d-flex flex-column vh-100">
         <div className='container flex-grow-1'>
-        <h1> <b> Adopta tu robot con Robot Lovers!</b> </h1>
+        <h1> <b> <FormattedMessage id="header"/></b> </h1>
         <hr/>
         <img src="\banner.png" alt="banner"/>
         <hr/>
 
-        <h1>Inicio de sesión</h1>
+        <h1><FormattedMessage id="login"/></h1>
         <Row className='justify-content-center'>
         <Col md={6} >
         <Form>
           <Form.Group className="mb-2 text-start" controlId="formBasicUser">
-            <Form.Label> <b>Nombre de usuario</b></Form.Label>
+            <Form.Label> <b><FormattedMessage id="user"/></b></Form.Label>
             <Form.Control 
               type="user" 
               placeholder="" 
@@ -97,13 +98,13 @@ function Login() {
             />
             {!validationStates.userState && 
               <Form.Text className="text-danger">
-                Usuario invalido.
+                <FormattedMessage id="user-error"/>
               </Form.Text>
             }
           </Form.Group>
   
           <Form.Group className="mb-2 text-start" controlId="formBasicPassword">
-            <Form.Label><b>Contraseña</b></Form.Label>
+            <Form.Label><b><FormattedMessage id="password"/></b></Form.Label>
             <Form.Control 
               type="password" 
               placeholder="" 
@@ -115,7 +116,7 @@ function Login() {
             />
             {!validationStates.passwordState && 
               <Form.Text className="text-danger">
-                Contraseña invalida. 
+                <FormattedMessage id="password-error"/>
               </Form.Text>
             }
           </Form.Group>
@@ -125,12 +126,12 @@ function Login() {
           <Row>
             <Col>
               <Button variant="primary" onClick={clickSubmit} className="w-100" >
-              Ingresar
+              <FormattedMessage id="submit"/>
             </Button>
             </Col>
             <Col>
             <Button variant="danger" onClick={clearForm} className="w-100" >
-            Cancelar
+            <FormattedMessage id="cancel"/>
             </Button>
             </Col>
   

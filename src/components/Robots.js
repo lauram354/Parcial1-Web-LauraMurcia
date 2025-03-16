@@ -2,6 +2,7 @@
 import Row from 'react-bootstrap/esm/Row';
 import Col from 'react-bootstrap/esm/Col';
 import Footer from './footer';
+import { FormattedMessage } from 'react-intl';
 
 const { useEffect, useState } = require("react");
 
@@ -40,7 +41,7 @@ function Robots(){
     return(
         <div className="d-flex flex-column vh-100">
             <div className='container flex-grow-1'>
-            <h1> <b> Adopta tu robot con Robot Lovers!</b> </h1>
+            <h1> <b> <FormattedMessage id="header"/></b> </h1>
             <hr/>
             <img src="\banner.png" alt="banner"/>
             <hr/>
@@ -53,9 +54,9 @@ function Robots(){
                         <thead className="table-dark">
                             <tr>
                             <th scope="col">ID</th>
-                            <th scope="col">Nombre</th>
-                            <th scope="col">Modelo</th>
-                            <th scope="col">Empresa Fabricante</th>
+                            <th scope="col"><FormattedMessage id="name"/></th>
+                            <th scope="col"><FormattedMessage id="model"/></th>
+                            <th scope="col"><FormattedMessage id="company"/></th>
                             </tr>
                         </thead>
                         <tbody >
@@ -79,9 +80,9 @@ function Robots(){
                             <img src={getUrl(detail.imagen)} class="card-img-top border-dark mb-3 " alt={detail.nombre} style={{width: "60%",height: "auto",border: "2px solid #ccc",borderRadius: "0px"}}/>
                             </div>
                             <div className="card-body text-start">
-                                <p className="card-text"><b>→ Año fabricación: </b>{detail.añoFabricacion}</p>
-                                <p className="card-text"><b>→ Capacidad de Procesamiento: </b> {detail.capacidadProcesamiento}</p>
-                                <p className="card-text"><b>→ Humor: </b>{detail.humor}</p>
+                                <p className="card-text"><b>→ <FormattedMessage id="year"/> </b>{detail.añoFabricacion}</p>
+                                <p className="card-text"><b>→ <FormattedMessage id="capacity"/>: </b> {detail.capacidadProcesamiento}</p>
+                                <p className="card-text"><b>→ <FormattedMessage id="humor"/>: </b>{detail.humor}</p>
                                 
                             </div>
                             </div>
